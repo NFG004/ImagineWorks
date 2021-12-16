@@ -27,7 +27,7 @@ module.exports = async (msg, args) => {
 				date: new Date(),
 			})
 				
-					msg.channel.send(killer.username + '** got teamkilled by **' + victim.username + '**? Could not be me.');
+					msg.channel.send('*'killer.username + '* got teamkilled by *' + victim.username + '*? Could not be me.');
 				
 		}
 	}
