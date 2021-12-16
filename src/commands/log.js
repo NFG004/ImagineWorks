@@ -2,10 +2,10 @@ const firebase = require('firebase');
 
 module.exports = async (msg, args) => {
 	if (args.length < 2) {
-		await msg.channel.send('Make sure you tag 2 users in !tklog \n e.g. `!tklog @Killer @Victim`');
+		await msg.channel.send('Make sure you tag 2 users retard \n e.g. ` !imagine @Killer @Victim `');
 	} else {
 		if (msg.mentions.users.size < 2) {
-			await msg.channel.send('Make sure you tag 2 users in !tklog \n e.g. `!tklog @Killer @Victim`');
+			await msg.channel.send('Make sure you tag 2 users retard \n e.g. ` !imagine @Killer @Victim `');
 		} else {
 			const iterator = msg.mentions.users.values();
 
