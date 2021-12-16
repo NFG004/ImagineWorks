@@ -9,8 +9,7 @@ module.exports = async (msg) => {
           // Removes the user from the set after a minute
           talkedRecently.delete(msg.author.id);
         }, 60000);
-		
-	const exampleEmbed = new MessageEmbed()
+		const exampleEmbed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('Some title')
 	.setURL('https://discord.js.org/')
@@ -29,6 +28,7 @@ module.exports = async (msg) => {
 	.setFooter('Some footer text here', 'https://i.imgur.com/AfFp7pu.png');
 
 channel.send({ embeds: [exampleEmbed] });
+		
     }
 	
 
