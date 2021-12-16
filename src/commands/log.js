@@ -1,5 +1,5 @@
 const firebase = require('firebase');
-
+const talkedRecently = new Set();
 module.exports = async (msg, args) => {
 	if (args.length < 2) {
 		await msg.channel.send('Make sure you tag 2 users retard \n e.g. ` !imagine @Killer @Victim `');
@@ -31,4 +31,9 @@ module.exports = async (msg, args) => {
 				
 		}
 	}
+	 talkedRecently.add(msg.author.id);
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(msg.author.id);
+        }, 120000);
 };

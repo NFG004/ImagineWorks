@@ -1,6 +1,6 @@
 const firebase = require('firebase');
 const { MessageButton } = require('discord-buttons');
-
+const talkedRecently = new Set();
 module.exports = async (msg, args) => {
 	let kills = [];
 	if (args.length < 1) {
@@ -82,4 +82,10 @@ module.exports = async (msg, args) => {
 
 		await msg.channel.send(killMsg, button);
 	}
+	// Adds the user to the set so that they can't talk for a minute
+        talkedRecently.add(msg.author.id);
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(msg.author.id);
+        }, 120000);
 };

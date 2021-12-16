@@ -1,3 +1,4 @@
+const talkedRecently = new Set();
 module.exports = async (msg) => {
 	let helpMsg = '**More commands soon** \n \n';
 	helpMsg += '` !imagine @Killer @Victim ` - Log a team kill. You can also include a reason \n \n';
@@ -8,4 +9,10 @@ module.exports = async (msg) => {
 	helpMsg += '` !tkk ` - Scoreboard of the users with the most team kills \n \n';
 	helpMsg += '` !tkd ` - Scoreboard of the users with the most team deaths \n \n';
 	await msg.channel.send(helpMsg);
+	 // Adds the user to the set so that they can't talk for a minute
+        talkedRecently.add(msg.author.id);
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(msg.author.id);
+        }, 120000);
 };

@@ -1,5 +1,5 @@
 const firebase = require('firebase');
-
+const talkedRecently = new Set();
 module.exports = async (msg) => {
 	let kills = [];
 	await firebase.firestore().collection('kills').where('serverId', '==', msg.guild.id).get()
@@ -44,4 +44,9 @@ module.exports = async (msg) => {
 	}
 
 	msg.channel.send(killMsg);
+	talkedRecently.add(msg.author.id);
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(msg.author.id);
+        }, 120000);
 };

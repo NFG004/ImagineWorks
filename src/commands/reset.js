@@ -1,5 +1,5 @@
 const firebase = require('firebase');
-
+const talkedRecently = new Set();
 module.exports = async (msg) => {
 	firebase.firestore().collection('kills').where('serverId', '==', msg.guild.id).get()
 		.then((killsQuery) => {
@@ -14,4 +14,10 @@ module.exports = async (msg) => {
 		.catch((error) => {
 			console.log('Error getting documents: ', error);
 		});
+		// Adds the user to the set so that they can't talk for a minute
+        talkedRecently.add(msg.author.id);
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(msg.author.id);
+        }, 120000);
 };
