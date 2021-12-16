@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const firebase = require("firebase/app");
 require("firebase/firestore");
+const talkedRecently = new Set();
 
 const commandHandler = require("./commands");
 

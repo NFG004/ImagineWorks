@@ -1,4 +1,3 @@
-const talkedRecently = new Set();
 const imagine = require('./log');
 const tkk = require('./kills');
 const tkd = require('./deaths');
