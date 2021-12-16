@@ -26,12 +26,9 @@ module.exports = async (msg, args) => {
 				reason: reason,
 				date: new Date(),
 			})
-				.then(() => {
+				
 					msg.channel.send('Kill by **' + killer.username + '** on **' + victim.username + '** logged.');
-				})
-				.catch((error) => {
-					console.error('Error writing document: ', error);
-				});
+				
 		}
 	}
 };
