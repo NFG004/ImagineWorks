@@ -19,7 +19,7 @@ disbut(client);
 //  appId: process.env.FIREBASE_APP_ID,
 //};
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
 
 client.on("message", commandHandler);
 
