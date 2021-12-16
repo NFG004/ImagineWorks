@@ -28,7 +28,7 @@ module.exports = async (msg) => {
 	.setTimestamp()
 	.setFooter('Some footer text here', 'https://i.imgur.com/AfFp7pu.png');
 
-channel.send({ embeds: [exampleEmbed] });
+msg.channel.send({ embeds: [exampleEmbed] });
     
 	
 
