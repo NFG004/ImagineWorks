@@ -1,6 +1,5 @@
 module.exports = async (msg) => {
-	let helpMsg = '**this shit is broken, needs firebase db stop crying** \n \n';
-	
+	let helpMsg = '**it will work soon ))** \n \n';
 	await msg.channel.send(helpMsg);
 
 };

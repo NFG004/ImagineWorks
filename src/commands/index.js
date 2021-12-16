@@ -4,7 +4,7 @@ const tkdeaths = require('./deaths');
 const tkhelp = require('./help');
 const tk = require('./stats');
 const tkremove = require('./remove');
-const tkinfo = require('./info');
+const info = require('./info');
 const tkreset = require('./reset');
 
 require('dotenv').config();
@@ -16,7 +16,7 @@ const commands = {
 	tkhelp,
 	tk,
 	tkremove,
-	tkinfo,
+	info,
 	tkreset
 };
 
