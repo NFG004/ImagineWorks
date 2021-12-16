@@ -3,8 +3,7 @@ module.exports = async (msg) => {
 	let helpMsg = '**this shit is broken, needs firebase db stop crying** \n \n';
 	
 	await msg.channel.send(helpMsg);
-};
-const exampleEmbed = new MessageEmbed()
+	const exampleEmbed = new MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('Some title')
 	.setURL('https://discord.js.org/')
@@ -23,3 +22,4 @@ const exampleEmbed = new MessageEmbed()
 	.setFooter('Some footer text here', 'https://i.imgur.com/AfFp7pu.png');
 
 channel.send({ embeds: [exampleEmbed] });
+};
