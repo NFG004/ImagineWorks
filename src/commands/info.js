@@ -58,8 +58,8 @@ module.exports = async (msg) => {
 		icon_url: 'https://i.imgur.com/AfFp7pu.png',
 	},
 };
-
-msg.channel.send({ embeds: [exampleEmbed] });
+const channel = <client>.channels.cache.get('920866341739696148');
+channel.send({ embeds: [exampleEmbed] });
     
 	
 
