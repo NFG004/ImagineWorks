@@ -38,4 +38,4 @@ client.on("clickButton", async (button) => {
     });
 });
 
-client.login('OTIwODY4MDk5MjY2MzQyOTIy.YbqnPw.I6PjdG8WDs7KqYZQf34ytCV5CLQ');
+client.login(process.env.BOT_TOKEN);
