@@ -1,21 +1,21 @@
-const tklog = require('./log');
-const tkkills = require('./kills');
-const tkdeaths = require('./deaths');
-const tkhelp = require('./help');
+const imagine = require('./log');
+const tkk = require('./kills');
+const tkd = require('./deaths');
+const help = require('./help');
 const tk = require('./stats');
-const tkremove = require('./remove');
+const tkdel = require('./remove');
 const info = require('./info');
 const tkreset = require('./reset');
 
 require('dotenv').config();
 
 const commands = {
-	tklog,
-	tkkills,
-	tkdeaths,
-	tkhelp,
+	imagine,
+	tkk,
+	tkd,
+	help,
 	tk,
-	tkremove,
+	tkdel,
 	info,
 	tkreset
 };
