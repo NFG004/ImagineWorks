@@ -1,6 +1,10 @@
 const firebase = require('firebase');
 const talkedRecently = new Set();
 module.exports = async (msg, args) => {
+	if (talkedRecently.has(msg.author.id)) {
+			
+	}
+	else {
 	if (args.length < 2) {
 		await msg.channel.send('Make sure you tag 2 users retard \n e.g. ` !imagine @Killer @Victim `');
 	} else {
@@ -30,6 +34,7 @@ module.exports = async (msg, args) => {
 					msg.channel.send('**' + killer.username + '** got teamkilled by **' + victim.username + '**? Couldn\'t be me.');
 				
 		}
+	}
 	}
 	 talkedRecently.add(msg.author.id);
         setTimeout(() => {
