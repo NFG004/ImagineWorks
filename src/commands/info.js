@@ -1,8 +1,7 @@
 const talkedRecently = new Set();
 module.exports = async (msg) => {
 	if (talkedRecently.has(msg.author.id)) {
-			let helpMsg = '**Cooldown** \n \n';
-			await msg.channel.send(helpMsg);
+			
 	}
 	else {
 			let helpMsg = '**FUCK YOUUU** \n \n';
