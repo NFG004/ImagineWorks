@@ -1,6 +1,6 @@
 const talkedRecently = new Set();
 module.exports = async (msg) => {
-	if (talkedRecently.has(msg.author.id) {
+	if (talkedRecently.has(msg.author.id)) {
 			let helpMsg = '**Cooldown** \n \n';
 			await msg.channel.send(helpMsg);
 	}
