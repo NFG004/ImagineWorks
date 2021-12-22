@@ -1,6 +1,10 @@
 const firebase = require("firebase");
 const talkedRecently = new Set();
 module.exports = async (msg, args) => {
+	if (talkedRecently.has(msg.author.id)) {
+			
+	}
+	else {  
   if (args.length < 1) {
     // stats for whole server
     let stats = [];
@@ -154,6 +158,7 @@ module.exports = async (msg, args) => {
     }
   }
   // Adds the user to the set so that they can't talk for a minute
+  }
         talkedRecently.add(msg.author.id);
         setTimeout(() => {
           // Removes the user from the set after a minute
