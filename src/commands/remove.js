@@ -2,6 +2,10 @@ const firebase = require('firebase');
 const { MessageButton } = require('discord-buttons');
 const talkedRecently = new Set();
 module.exports = async (msg, args) => {
+	if (talkedRecently.has(msg.author.id)) {
+			
+	}
+	else {	
 	let kills = [];
 	if (args.length < 1) {
 		await firebase.firestore().collection('kills').where('serverId', '==', msg.guild.id).orderBy('date', 'desc').limit(5).get()
@@ -83,6 +87,7 @@ module.exports = async (msg, args) => {
 		await msg.channel.send(killMsg, button);
 	}
 	// Adds the user to the set so that they can't talk for a minute
+	}
         talkedRecently.add(msg.author.id);
         setTimeout(() => {
           // Removes the user from the set after a minute
