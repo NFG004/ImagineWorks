@@ -25,7 +25,7 @@ module.exports = async (msg) => {
 			.setTimestamp()
 			.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
-			awai msg.channel.send(exampleEmbed);	
+			await msg.channel.send(exampleEmbed);	
 	}
         // Adds the user to the set so that they can't talk for a minute
         talkedRecently.add(msg.author.id);
