@@ -1,5 +1,6 @@
 const firebase = require('firebase');
 const talkedRecently = new Set();
+const Discord = require('discord.js');
 module.exports = async (msg) => {
 	if (talkedRecently.has(msg.author.id)) {
 			
@@ -48,6 +49,13 @@ module.exports = async (msg) => {
 	}
 
 	msg.channel.send(killMsg);
+	const exampleEmbed = new Discord.MessageEmbed()
+			.setColor('#0099ff')
+			.setAuthor('Top Teamkillers')
+			.setDescription(killMsg)
+			.setTimestamp()
+			.setFooter('Couldn\'t be me', 'https://i.imgur.com/wSTFkRM.png');
+	msg.channel.send(exampleEmbed);
 	}
 	talkedRecently.add(msg.author.id);
         setTimeout(() => {
