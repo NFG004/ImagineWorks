@@ -49,7 +49,10 @@ module.exports = async (msg) => {
 	}
 
 	msg.channel.send(killMsg);
-	let topKill = killMsg.substr(0, killMsg.indexOf(Tks) + 3);
+	let first = killMsg.indexOf(Tks);
+	let topKill = killMsg.substr(0, first+3);
+	msg.channel.send(first);
+	msg.channel.send(topKill);
 	const exampleEmbed = new Discord.MessageEmbed()
 			.setColor('#0099ff')
 			.setTitle(topKill)
@@ -59,7 +62,7 @@ module.exports = async (msg) => {
 			.setFooter('Couldn\'t be me', 'https://i.imgur.com/wSTFkRM.png');
 	msg.channel.send(exampleEmbed);
 	}
-	talkedRecently.add(msg.author.id);
+	//talkedRecently.add(msg.author.id);
         setTimeout(() => {
           // Removes the user from the set after a minute
           talkedRecently.delete(msg.author.id);
