@@ -32,7 +32,7 @@ module.exports = async (msg) => {
 	playerKills = playerKills.sort((a,b) => b.killCount - a.killCount);
 
 
-	let killMsg = '**Most Team Kills\n**';
+	let killMsg = '';
 	for (let i = 0; i < playerKills.length; i++) {
 		let playerName = '';
 		const player = msg.guild.member(playerKills[i].player);
@@ -49,8 +49,10 @@ module.exports = async (msg) => {
 	}
 
 	msg.channel.send(killMsg);
+	let topKill = killMsg.substr(0, killMsg.indexOf(Tks) + 3);
 	const exampleEmbed = new Discord.MessageEmbed()
 			.setColor('#0099ff')
+			.setTitle(topKill)
 			.setAuthor('Top Teamkillers')
 			.setDescription(killMsg)
 			.setTimestamp()
