@@ -49,7 +49,7 @@ module.exports = async (msg) => {
 	}
 
 	msg.channel.send(killMsg);
-	let first = killMsg.indexOf(Tks);
+	let first = killMsg.indexOf('Tks');
 	let topKill = killMsg.substr(0, first+3);
 	msg.channel.send(first);
 	msg.channel.send(topKill);
